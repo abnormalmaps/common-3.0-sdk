@@ -85,3 +85,12 @@ corefoundation:
     CF-550.42:
       - source: .
         dest: CoreFoundation
+
+libm:
+  repo_url: https://github.com/apple-oss-distributions/Libm.git
+  sources:
+    Libm-2026:
+      - source: Source/math.h
+        dest: math.h
+      - source: Source/ARM/math.h
+        dest: architecture/arm/math.h
