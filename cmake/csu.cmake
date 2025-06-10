@@ -9,6 +9,7 @@ set(BASE_C_FLAGS
     -B${CCTOOLS_BUILD_PREFIX}/bin
     -I${CMAKE_BINARY_DIR}/include
     -Wno-expansion-to-defined
+    -v
 )
 
 set(OS_MIN_V2 -miphoneos-version-min=2.0)
