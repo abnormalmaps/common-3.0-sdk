@@ -14,7 +14,7 @@ if(WIN32)
     install(
         DIRECTORY ${CMAKE_BINARY_DIR}/bundled_dlls
         DESTINATION ${SDK_PATH}/usr/bin
-        COMPONENT bundled_dlls
+        COMPONENT dlls
         USE_SOURCE_PERMISSIONS
     )
 endif()
