@@ -9,6 +9,7 @@ if(WIN32)
     )
     add_custom_target(
         bundled_dlls
+        ALL
         DEPENDS ${CMAKE_BINARY_DIR}/bundled_dlls
     )
     install(
