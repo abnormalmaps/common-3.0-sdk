@@ -40,7 +40,7 @@ if env_path_prefixes is not None:
     path_prefixes = [path for path in env_path_prefixes.split(os.pathsep) if path]
 else:
     path_prefixes = DEFAULT_PATH_PREFIXES
-
+print(path_prefixes)
 # This blacklist may need extending
 blacklist = [
     "advapi32.dll", "kernel32.dll", "msvcrt.dll", "ole32.dll", "user32.dll",
