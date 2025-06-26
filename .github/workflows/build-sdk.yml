@@ -80,9 +80,6 @@ jobs:
     - name: Create SDK
       run: cmake --install ${{github.workspace}}/build
 
-    - name: Bundle DLLs
-      run: python3 ./mingw-bundledlls.py '${{github.workspace}}/common-3.0.sdk/usr/bin/ld.exe' --copy
-
     - name: Bundle SDK
       run: tar -czf common-3.0.sdk-windows-x86_64.tar.gz common-3.0.sdk/
 

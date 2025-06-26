@@ -132,7 +132,12 @@ def main():
     parser.add_argument(
         "--copy",
         action="store_true",
-        help="In addition to printing out the dependencies, also copy them next to the exe_file"
+        help="In addition to printing out the dependencies, also copy them to the output directory"
+    )
+    parser.add_argument(
+        "--output-directory",
+        type=str,
+        help="The directory to copy the dependencies to. Defaults to next to the exe_file."
     )
     parser.add_argument(
         "--upx",
@@ -150,9 +155,13 @@ def main():
     print("\n".join(all_deps))
 
     if args.copy:
-        print("Copying enabled, will now copy all dependencies next to the exe_file.\n")
+        if args.output_directory is None:
+            print("Copying enabled, will now copy all dependencies next to the exe_file.\n")
+            parent_dir = os.path.dirname(os.path.abspath(args.exe_file))
+        else:
+            print(f"Copying enabled, will now copy all dependencies next to {args.output_directory}.\n")
+            parent_dir = args.output_directory
 
-        parent_dir = os.path.dirname(os.path.abspath(args.exe_file))
 
         for dep in all_deps:
             target = os.path.join(parent_dir, os.path.basename(dep))
