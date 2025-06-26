@@ -8,7 +8,7 @@ if(WIN32)
         COMMENT "Gettiing bundled DLLs"
     )
     add_custom_target(
-        bundled_dlls
+        bundle_dlls
         ALL
         DEPENDS ${CMAKE_BINARY_DIR}/bundled_dlls
     )
