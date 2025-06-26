@@ -5,10 +5,16 @@ if(WIN32)
         OUTPUT ${CMAKE_BINARY_DIR}/bundled_dlls
         COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/mingw-bundledlls.py --copy --output-dir ${CMAKE_BINARY_DIR}/bundled_dlls ${CMAKE_BINARY_DIR}/cctools/bin/ld.exe
         DEPENDS ${CMAKE_BINARY_DIR}/cctools/bin/
+        COMMENT "Gettiing bundled DLLs"
+    )
+    add_custom_target(
+        bundled_dlls
+        DEPENDS ${CMAKE_BINARY_DIR}/bundled_dlls
     )
     install(
         DIRECTORY ${CMAKE_BINARY_DIR}/bundled_dlls
         DESTINATION ${SDK_PATH}/usr/bin
+        COMPONENT bundled_dlls
         USE_SOURCE_PERMISSIONS
     )
 endif()
