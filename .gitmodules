@@ -4,4 +4,4 @@
 	branch = tags/Csu-85
 [submodule "sources/cctools-port"]
 	path = sources/cctools-port
-	url = https://github.com/touchHLE/cctools-port.git
+	url = https://github.com/abnormalmaps/cctools-port.git
