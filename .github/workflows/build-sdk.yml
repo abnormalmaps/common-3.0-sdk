@@ -74,11 +74,11 @@ jobs:
 
     - name: Configure CMake
       working-directory: sdk-source
-      run: cmake ${{ matrix.cmake_args || '' }} -B build
+      run: cmake ${{ matrix.cmake_args || '' }} -v -B build
 
     - name: Build
       working-directory: sdk-source
-      run: cmake --build -v build
+      run: cmake --build build
 
     - name: Create SDK
       working-directory: sdk-source
