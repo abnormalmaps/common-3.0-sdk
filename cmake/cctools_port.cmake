@@ -6,6 +6,10 @@ include(ExternalProject)
 
 message( "ARCHS=" ${CMAKE_OSX_ARCHITECTURES} )
 
+
+# https://discourse.cmake.org/t/how-to-pass-cmake-osx-architectures-to-externalproject-add/2262/2
+string(REPLACE ";" "$<SEMICOLON>" CMAKE_OSX_ARCHITECTURES_ "${CMAKE_OSX_ARCHITECTURES}")
+
 ExternalProject_Add(
     cctools_port
     SOURCE_DIR ${CCTOOLS_SOURCE_DIR}
@@ -16,8 +20,8 @@ ExternalProject_Add(
         -DCMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}
         -DCMAKE_INSTALL_PREFIX=${CCTOOLS_BUILD_PREFIX}
         -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-        # https://discourse.cmake.org/t/how-to-pass-cmake-osx-architectures-to-externalproject-add/2262/2
-        string(REPLACE ";" "$<SEMICOLON>" CMAKE_OSX_ARCHITECTURES_ "${CMAKE_OSX_ARCHITECTURES}")
+    CMAKE_CACHE_ARGS
+        -DCMAKE_OSX_ARCHITECTURES=${CMAKE_OSX_ARCHITECTURES}
 )
 
 install(
