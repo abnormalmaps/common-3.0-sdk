@@ -14,6 +14,8 @@ ExternalProject_Add(
         -DCMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}
         -DCMAKE_INSTALL_PREFIX=${CCTOOLS_BUILD_PREFIX}
         -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+        # https://discourse.cmake.org/t/how-to-pass-cmake-osx-architectures-to-externalproject-add/2262/2
+        string(REPLACE ";" "$<SEMICOLON>" CMAKE_OSX_ARCHITECTURES_ "${CMAKE_OSX_ARCHITECTURES}")
 )
 
 install(
