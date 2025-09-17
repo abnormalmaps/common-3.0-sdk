@@ -4,6 +4,8 @@ set(CCTOOLS_BUILD_PREFIX "${CMAKE_BINARY_DIR}/cctools")
 
 include(ExternalProject)
 
+message( "ARCHS=" ${CMAKE_OSX_ARCHITECTURES} )
+
 ExternalProject_Add(
     cctools_port
     SOURCE_DIR ${CCTOOLS_SOURCE_DIR}
