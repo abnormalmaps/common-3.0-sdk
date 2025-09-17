@@ -45,6 +45,9 @@ jobs:
         submodules: 'true'
         path: sdk-source
 
+    - name: bleh
+      if: matrix.os == 'windows-latest'
+      run: which ar
     - name: Setup Windows Environment
       if: matrix.os == 'windows-latest'
       uses: msys2/setup-msys2@v2
