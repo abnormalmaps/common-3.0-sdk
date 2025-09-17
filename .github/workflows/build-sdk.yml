@@ -46,7 +46,7 @@ jobs:
         path: sdk-source
 
     - name: bleh
-      if: matrix.os == 'windows-latest'
+      if: matrix.os == 'macos-latest'
       run: which ar
     - name: Setup Windows Environment
       if: matrix.os == 'windows-latest'
