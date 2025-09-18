@@ -74,7 +74,7 @@ jobs:
 
     - name: Configure CMake
       working-directory: sdk-source
-      run: cmake ${{ matrix.cmake_args || '' }} -v -B build
+      run: cmake ${{ matrix.cmake_args || '' }} --verbose -B build
 
     - name: Build
       working-directory: sdk-source
